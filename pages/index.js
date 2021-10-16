@@ -1,7 +1,8 @@
 import Head from 'next/head';
-import Layout from '../components/Layout';
 import VideoBackground from '../components/VideoBackground';
 import PrimaryHeader from '../components/PrimaryHeader';
+import Navigation from '../components/Navigation';
+import styles from '../assets/styles/pages/_home.module.scss';
 
 export default function Home() {
   return (
@@ -10,10 +11,11 @@ export default function Home() {
         <title>The Lewd Dudes</title>
         <link rel="icon" href="/tld-logo.svg" />
       </Head>
-      <Layout>
-        <VideoBackground></VideoBackground>
-        <PrimaryHeader></PrimaryHeader>
-      </Layout>
+      <Navigation />
+      <div className={styles.background}>
+        <VideoBackground />
+        <PrimaryHeader />
+      </div>
     </div>
   );
 }

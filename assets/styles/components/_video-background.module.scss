@@ -1,8 +1,10 @@
 @import '../utilities/mixins';
+@import '../utilities/variables';
 
 .video_container {
   width: 100vw;
   height: 100vh;
+  z-index: $z-index-video-background;
 
   .iframe {
     display: none;

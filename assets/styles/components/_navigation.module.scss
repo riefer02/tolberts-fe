@@ -1,0 +1,277 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+
+.nav {
+  z-index: $z-index-nav;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.navContent {
+  position: relative;
+  height: 100%;
+}
+
+.navToggle {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  @include respond(tab-port) {
+  }
+
+  @include respond(tab-land) {
+  }
+
+  @include respond(desktop) {
+    top: 25px;
+    right: 25px;
+  }
+
+  @include respond(big-desktop) {
+    top: 50px;
+    right: 50px;
+  }
+}
+
+.navToggle__button {
+  height: 25px;
+  width: 25px;
+  padding: 25px;
+  border-radius: 50%;
+  background-color: palegreen;
+  cursor: pointer;
+  @apply shadow-md;
+  position: relative;
+  z-index: $z-index-nav-button;
+
+  @include respond(tab-port) {
+    height: 40px;
+    width: 40px;
+    padding: 50px;
+  }
+  @include respond(tab-land) {
+    height: 40px;
+    width: 40px;
+    padding: 50px;
+  }
+
+  @include respond(desktop) {
+    height: 40px;
+    width: 40px;
+    padding: 50px;
+  }
+
+  @include respond(big-desktop) {
+    height: 60px;
+    width: 60px;
+    padding: 70px;
+  }
+
+  .navToggle__buttonContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.active {
+    .navToggle__line {
+      &:nth-child(1) {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      &:nth-child(3) {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  .navToggle__line {
+    background-color: rgb(18, 18, 18);
+    display: block;
+    transition: all 0.3s ease-in-out;
+    width: 32px;
+    height: 3px;
+    margin: 6px auto;
+
+    @include respond(tab-port) {
+      width: 58px;
+      height: 5px;
+      margin: 14px auto;
+    }
+
+    @include respond(desktop) {
+      width: 60px;
+      height: 5px;
+      margin: 14px auto;
+    }
+
+    @include respond(big-desktop) {
+      width: 81px;
+      height: 5px;
+      margin: 19px auto;
+    }
+  }
+}
+
+.navOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: $transition-fast;
+  overflow: hidden;
+
+  &.activeOverlay {
+    opacity: 1;
+
+    .navBody {
+      transform: translateX(0%);
+    }
+
+    .navList__item {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+}
+
+.navBody {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  width: 100%;
+  background-color: palevioletred;
+  padding: 10px;
+  transform: translateX(100%);
+  transition: $transition-fast;
+  transition-delay: 0.2s;
+  border-left: 10px solid rgb(164, 75, 143);
+
+  @include respond(tab-port) {
+    width: 80%;
+  }
+
+  @include respond(tab-land) {
+    padding: 50px;
+    width: 50%;
+  }
+
+  @include respond(desktop) {
+    width: 25%;
+  }
+}
+
+.navBody__content {
+  height: 100%;
+  // background-color: rgb(242, 187, 205);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navBody__contentTop {
+  // background-color: peachpuff;
+  height: 11%;
+  width: 100%;
+}
+
+.navBody__contentMiddle {
+  // background-color: rgb(218, 185, 157);
+  width: 100%;
+  flex-grow: 1;
+
+  @include respond(tab-port) {
+    padding: 30px;
+  }
+}
+
+.navBody__contentBottom {
+  // background-color: rgb(179, 153, 130);
+  height: 11%;
+  width: 100%;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  // background-color: rgb(255, 189, 124);
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navList__item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: $transition-fast;
+  transition-delay: 0.5s;
+  opacity: 0;
+  transform: translateX(100%);
+  position: relative;
+  left: -2px;
+  // overflow: hidden;
+
+  @include respond(tab-port) {
+    left: 0;
+  }
+
+  &:hover {
+    .navList__text {
+      font-size: 30px;
+
+      @include respond(tab-port) {
+        font-size: 45px;
+      }
+
+      @include respond(big-desktop) {
+        font-size: 55px;
+      }
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.navList__icon {
+}
+
+.navList__text {
+  transition: $transition-fast;
+  font-size: 25px;
+
+  @include respond(tab-port) {
+    font-size: 40px;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 50px;
+  }
+
+  &::before {
+    position: absolute;
+    width: 150%;
+    background-color: rgb(255, 255, 255);
+    content: '';
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: skewY(8deg) rotate(-8deg) translate(-50%, -50%);
+    transform-origin: center;
+    opacity: 0;
+    transition: $transition-slow;
+  }
+}
