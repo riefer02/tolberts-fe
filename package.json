@@ -6,14 +6,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "latest",
+    "next": "^12.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.42.1"
+    "react-intersection-observer": "^8.32.2",
+    "sass": "^1.43.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.7",
-    "postcss": "^8.3.9",
-    "tailwindcss": "^2.2.16"
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19"
   }
 }

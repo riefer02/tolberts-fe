@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import styles from '../assets/styles/components/_navigation.module.scss';
 
 export default function Navigation() {
@@ -29,14 +30,20 @@ function NavBody({ isActive }) {
     >
       <div className={styles.navBody}>
         <div className={styles.navBody__content}>
-          <div className={styles.navBody__contentTop}></div>
+          <div className={styles.navBody__contentTop}>
+            <Link href="/">
+              <i className={`icon-tld-logo ${styles.navBody__logo}`}></i>
+            </Link>
+          </div>
           <div className={styles.navBody__contentMiddle}>
             <nav className={styles.navList}>
               {navItems.map((i, index) => (
-                <div key={index} className={styles.navList__item}>
-                  <div className={styles.navList__icon}></div>
-                  <div className={styles.navList__text}>{i}</div>
-                </div>
+                <Link href={i}>
+                  <div key={index} className={styles.navList__item}>
+                    <div className={styles.navList__icon}></div>
+                    <div className={styles.navList__text}>{i}</div>
+                  </div>
+                </Link>
               ))}
             </nav>
           </div>

@@ -1,5 +1,6 @@
 @import '../utilities/variables';
 @import '../utilities/mixins';
+@import '../utilities/colors.module';
 
 .nav {
   z-index: $z-index-nav;
@@ -170,7 +171,6 @@
 
 .navBody__content {
   height: 100%;
-  // background-color: rgb(242, 187, 205);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -179,13 +179,11 @@
 }
 
 .navBody__contentTop {
-  // background-color: peachpuff;
   height: 11%;
   width: 100%;
 }
 
 .navBody__contentMiddle {
-  // background-color: rgb(218, 185, 157);
   width: 100%;
   flex-grow: 1;
 
@@ -195,15 +193,25 @@
 }
 
 .navBody__contentBottom {
-  // background-color: rgb(179, 153, 130);
   height: 11%;
   width: 100%;
+}
+
+.navBody__logo {
+  cursor: pointer;
+
+  &::before {
+    font-size: 55px;
+
+    &:hover {
+      // color: $color-green;
+    }
+  }
 }
 
 .navList {
   display: flex;
   flex-direction: column;
-  // background-color: rgb(255, 189, 124);
   height: 100%;
   justify-content: space-between;
   align-items: center;
@@ -265,7 +273,7 @@
     width: 150%;
     background-color: rgb(255, 255, 255);
     content: '';
-    height: 50%;
+    height: 65%;
     top: 50%;
     left: 50%;
     z-index: -1;
@@ -273,5 +281,6 @@
     transform-origin: center;
     opacity: 0;
     transition: $transition-slow;
+    padding: 10px;
   }
 }
