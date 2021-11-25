@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import styles from '../../assets/styles/pages/_events.module.scss';
+import { getPosts } from '../../lib/api';
 
 const mockData = [
   {
@@ -17,7 +18,7 @@ const mockData = [
   },
 ];
 
-export default function Events() {
+export default function Events({ posts }) {
   return (
     <Layout title="Events">
       <div className="container mx-auto bg-indigo-300">
@@ -31,4 +32,13 @@ export default function Events() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  let posts = await getPosts();
+  return {
+    props: {
+      posts,
+    },
+  };
 }
