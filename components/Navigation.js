@@ -23,7 +23,7 @@ export default function Navigation() {
 }
 
 function NavBody({ isActive }) {
-  const navItems = ['biography', 'music', 'shows', 'store', 'videos', 'misc'];
+  const navItems = ['biography', 'music', 'events', 'store', 'videos', 'misc'];
   return (
     <div
       className={`${styles.navOverlay} ${isActive ? styles.activeOverlay : ''}`}
@@ -38,8 +38,8 @@ function NavBody({ isActive }) {
           <div className={styles.navBody__contentMiddle}>
             <nav className={styles.navList}>
               {navItems.map((i, index) => (
-                <Link href={i}>
-                  <div key={index} className={styles.navList__item}>
+                <Link key={index} href={i}>
+                  <div className={styles.navList__item}>
                     <div className={styles.navList__icon}></div>
                     <div className={styles.navList__text}>{i}</div>
                   </div>

@@ -7,6 +7,7 @@ export default function Biography() {
     /* Optional options */
     threshold: 0,
   });
+
   return (
     <Layout title="Biography">
       <div ref={ref}>
