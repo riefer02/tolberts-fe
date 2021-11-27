@@ -72,6 +72,12 @@
     padding: 70px;
   }
 
+  @include respond(xxl-desktop) {
+    height: 60px;
+    width: 60px;
+    padding: 70px;
+  }
+
   .navToggle__buttonContent {
     position: absolute;
     top: 50%;
@@ -160,12 +166,20 @@
   }
 
   @include respond(tab-land) {
-    padding: 50px;
     width: 50%;
   }
 
   @include respond(desktop) {
+    padding: 20px;
     width: 25%;
+  }
+
+  @include respond(big-desktop) {
+    padding: 40px;
+  }
+
+  @include respond(xxl-desktop) {
+    padding: 50px;
   }
 }
 
@@ -203,8 +217,22 @@
   &::before {
     font-size: 55px;
 
+    @include respond(tab-port) {
+      font-size: 100px;
+    }
+
+    @include respond(tab-land) {
+      font-size: 40px;
+    }
+    @include respond(desktop) {
+      font-size: 105px;
+    }
+
+    @include respond(big-desktop) {
+      font-size: 140px;
+    }
+
     &:hover {
-      // color: $color-green;
     }
   }
 }
@@ -228,7 +256,6 @@
   transform: translateX(100%);
   position: relative;
   left: -2px;
-  // overflow: hidden;
 
   @include respond(tab-port) {
     left: 0;
