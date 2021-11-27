@@ -1,4 +1,5 @@
 @import '../utilities/variables';
+@import '../utilities/mixins';
 
 .background {
   height: 100vh;
@@ -7,4 +8,49 @@
   background-position: center;
   background-size: cover;
   z-index: $z-index-layout;
+}
+
+.homeMarquee {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  z-index: $z-index-primary-content;
+}
+
+.logoContainer {
+  i {
+    height: 100%;
+    width: 100%;
+  }
+
+  i::before {
+    font-size: 12rem;
+
+    @include respond(tab-land) {
+      font-size: 30rem;
+    }
+    text-shadow: 1px 1px 10px black;
+    border-radius: 50%;
+    animation: colorRotate 6s linear 0s infinite;
+  }
+}
+
+@keyframes colorRotate {
+  from {
+    color: #6666ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff3399;
+  }
+  100% {
+    color: #6666ff;
+  }
 }
