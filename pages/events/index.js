@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Layout from '../../components/Layout';
 import styles from '../../assets/styles/pages/_events.module.scss';
 import { getEvents } from '../../lib/fetchEvents';
@@ -16,7 +17,12 @@ export default function Events({ events }) {
             return (
               <li className={styles.eventItem} key={index}>
                 <div className={styles.eventItem__image}>
-                  <img src={event.image.sourceUrl} alt="" />
+                  <Image
+                    src={event.image.sourceUrl}
+                    alt={`promotional image for ${event.name} event`}
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </div>
                 <div className="flex flex-col w-full">
                   <div className={styles.eventItem__description}>

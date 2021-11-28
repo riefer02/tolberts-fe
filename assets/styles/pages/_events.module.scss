@@ -18,14 +18,10 @@
 }
 
 .eventItem__image {
+  position: relative;
   overflow: hidden;
   height: 160px;
-
-  img {
-    width: 100%; /* or any custom size */
-    height: 100%;
-    object-fit: contain;
-  }
+  width: 160px; /* or any custom size */
 }
 
 .eventItem__description {

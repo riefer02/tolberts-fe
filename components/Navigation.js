@@ -38,7 +38,7 @@ function NavBody({ isActive }) {
           <div className={styles.navBody__contentMiddle}>
             <nav className={styles.navList}>
               {navItems.map((i, index) => (
-                <Link key={index} href={i}>
+                <Link key={index} href={`/${i}`}>
                   <div className={styles.navList__item}>
                     <div className={styles.navList__icon}></div>
                     <div className={styles.navList__text}>{i}</div>
