@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../assets/styles/components/_navigation.module.scss';
-console.log(styles);
 
 export default function Navigation() {
   const [isActive, setActive] = useState(false);
