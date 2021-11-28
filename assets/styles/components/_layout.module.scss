@@ -1,6 +1,16 @@
 @import '../utilities/variables.module';
 
 .layout {
-  //   z-index: $z-index-layout;
-  //   position: relative;
+  z-index: $z-index-layout;
+}
+
+.pageLayout {
+  position: relative;
+  height: 100%;
+  background: rgb(255, 237, 188);
+  background: radial-gradient(
+    circle,
+    rgba(255, 237, 188, 1) 0%,
+    rgba(237, 66, 100, 1) 100%
+  );
 }

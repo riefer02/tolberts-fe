@@ -12,8 +12,9 @@ export default function Event({ event }) {
   return (
     <Layout title={name}>
       <div className="container">
-        <span onClick={() => router.back()}>Click here to go back</span>
         <h1>{name}</h1>
+        <button onClick={() => router.back()}>Click here to go back</button>
+        <div className="w-100 h-100 bg-indigo-500 flex justify-center align-middle"></div>
       </div>
     </Layout>
   );

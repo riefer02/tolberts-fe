@@ -12,6 +12,10 @@ export default function Navigation() {
     audio.paused ? audio.play() : '';
   }, [isActive]);
 
+  useEffect(() => {
+    console.log('route changed');
+  }, []);
+
   return (
     <div className={styles.nav}>
       <div className={`${styles.navContent} ${isActive ? styles.isOpen : ''}`}>

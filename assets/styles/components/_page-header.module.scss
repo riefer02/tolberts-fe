@@ -1,5 +1,16 @@
 @import '../utilities/colors.module';
+@import '../utilities//variables.module';
+
+.pageHeader__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  z-index: $z-index-main-layout;
+}
 
 .pageHeader {
-  // background-color: $color-purple-dark;
+  font-size: 60px;
 }
