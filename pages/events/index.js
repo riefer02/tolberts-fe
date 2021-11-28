@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Layout from '../../components/Layout';
 import styles from '../../assets/styles/pages/_events.module.scss';
 import { getEvents } from '../../lib/fetchEvents';
@@ -10,6 +11,7 @@ export default function Events({ events }) {
         <ul className={styles.eventList}>
           {events.map((i, index) => {
             const event = i.node.postTypeEvent;
+            const id = i.node.id;
 
             return (
               <li className={styles.eventItem} key={index}>
@@ -24,7 +26,9 @@ export default function Events({ events }) {
                   </div>
                   <div className={styles.eventItem__actions}>
                     <a href={event.cta}>Get Tickets!</a>
-                    <a href="Custom Single Event URL">More Info</a>
+                    <Link href={`/events/${id}`}>
+                      <a>More Info</a>
+                    </Link>
                   </div>
                 </div>
               </li>
