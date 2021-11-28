@@ -1,0 +1,9 @@
+[build]
+publish = ".next"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+# [functions]
+#   node_bundler = "esbuild"
+#   external_node_modules = ["sharp", "pnpapi", "fsevents", "@ampproject/toolbox-optimizer", "jest-worker", "keyv", "webpack", "mini-css-extract-plugin", "browserslist", "loader-runner", "cssnano-preset-simple", "@babel/core"]
