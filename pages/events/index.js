@@ -1,33 +1,35 @@
 import React from 'react';
 import Layout from '../../components/Layout';
 import styles from '../../assets/styles/pages/_events.module.scss';
-import { getPosts } from '../../lib/api';
+import { getEvents } from '../../lib/fetchEvents';
 
-const mockData = [
-  {
-    name: 'The Lewd Dudes @ Tolberts',
-    id: 1,
-  },
-  {
-    name: 'Time Safari @ Far Out Lounge',
-    id: 2,
-  },
-  {
-    name: 'Andrew Riefenstahl @ Hotel Vegas',
-    id: 3,
-  },
-];
-
-export default function Events({ posts }) {
+export default function Events({ events }) {
   return (
     <Layout title="Events">
-      <div className="container mx-auto bg-indigo-300">
+      <div className="container">
         <ul className={styles.eventList}>
-          {mockData.map((i) => (
-            <li className={styles.eventItem} key={i.id}>
-              <h3>{i.name}</h3>
-            </li>
-          ))}
+          {events.map((i, index) => {
+            const event = i.node.postTypeEvent;
+
+            return (
+              <li className={styles.eventItem} key={index}>
+                <div className={styles.eventItem__image}>
+                  <img src={event.image.sourceUrl} alt="" />
+                </div>
+                <div className="flex flex-col w-full">
+                  <div className={styles.eventItem__description}>
+                    <h4>{event.date}</h4>
+                    <h3>{event.name}</h3>
+                    <h5>{event.location}</h5>
+                  </div>
+                  <div className={styles.eventItem__actions}>
+                    <a href={event.cta}>Get Tickets!</a>
+                    <a href="Custom Single Event URL">More Info</a>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </Layout>
@@ -35,10 +37,11 @@ export default function Events({ posts }) {
 }
 
 export async function getServerSideProps(ctx) {
-  let posts = await getPosts();
+  let events = await getEvents();
+
   return {
     props: {
-      posts,
+      events,
     },
   };
 }

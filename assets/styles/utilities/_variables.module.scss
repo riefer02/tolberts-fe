@@ -12,3 +12,10 @@ $transition-slow: all 0.3s ease-in;
 
 // Font Families
 $font-family-primary: 'Raleway', sans-serif;
+
+// Borders
+$border-radius-global: 1rem;
+$border-width-global: 1px;
+
+// Box-Shadow: "shadow-md"
+$box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);

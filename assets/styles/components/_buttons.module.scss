@@ -1,0 +1,16 @@
+.btn {
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: $border-radius-global;
+  background-color: $color-white;
+  border: $border-width-global solid $color-black;
+  font-weight: bold;
+  transition: $transition-fast;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    background-color: $color-gray-darker;
+    color: $color-white;
+  }
+}

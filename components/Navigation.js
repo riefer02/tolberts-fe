@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../assets/styles/components/_navigation.module.scss';
+console.log(styles);
 
 export default function Navigation() {
   const [isActive, setActive] = useState(false);
@@ -14,7 +15,7 @@ export default function Navigation() {
 
   return (
     <div className={styles.nav}>
-      <div className={styles.navContent}>
+      <div className={`${styles.navContent} ${isActive ? styles.isOpen : ''}`}>
         <NavToggle setActive={setActive} isActive={isActive} />
         <NavBody setActive={setActive} isActive={isActive} />
       </div>
