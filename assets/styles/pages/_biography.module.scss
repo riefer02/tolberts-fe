@@ -1,12 +1,6 @@
 @import '../utilities/variables.module';
-@import '../utilities/colors.module';
-@import '../components/buttons.module';
 
-.eventList {
-  color: $color-gray-darker;
-}
-
-.eventItem {
+.bioItem {
   display: flex;
   font-size: 30px;
   background-color: #f4dc9e;
@@ -17,15 +11,20 @@
   box-shadow: $box-shadow;
 }
 
-.eventItem__image {
+.bioItem__image {
   position: relative;
   overflow: hidden;
-  height: 160px;
-  width: 160px; /* or any custom size */
+  width: 250px;
+  height: 250px;
+
+  img {
+    margin-right: auto;
+  }
 }
 
-.eventItem__description {
+.bioItem__description {
   padding: 10px 18px 0;
+  width: 100%;
 
   h4,
   h3,
@@ -46,14 +45,8 @@
   h5 {
     font-size: 18px;
   }
-}
 
-.eventItem__actions {
-  padding: 0 18px 10px;
-  text-align: right;
-
-  a {
-    @extend .btn;
-    margin-left: 10px;
+  p {
+    font-size: 16px;
   }
 }
