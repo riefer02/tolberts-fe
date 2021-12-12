@@ -1,5 +1,6 @@
 @import '../utilities/variables.module';
 @import '../utilities/colors.module';
+@import '../utilities/mixins.module';
 @import '../components/buttons.module';
 
 .eventList {
@@ -8,9 +9,9 @@
 
 .eventItem {
   display: flex;
+  flex-direction: column;
   font-size: 30px;
-  background-color: #f4dc9e;
-  padding: 0.5rem 0.5rem;
+  padding: 16px;
   margin-top: 1rem;
   transition: all 0.25s;
   position: relative;
@@ -19,21 +20,37 @@
   background-color: rgba(245, 166, 35, 0.75);
   border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
+
+  @include respond(tab-land) {
+    flex-direction: row;
+    padding: 8px;
+  }
 }
 
 .eventItem__image {
   position: relative;
   overflow: hidden;
-  height: 160px;
-  width: 160px; /* or any custom size */
+  height: 220px;
+  width: 100%;
+
+  @include respond(tab-land) {
+    height: 160px;
+    width: 160px;
+  }
 }
 
 .eventItem__description {
   padding: 10px 18px 0;
+  text-align: center;
+
+  @include respond(tab-land) {
+    text-align: left;
+  }
 
   h4,
   h3,
   h5 {
+    text-transform: uppercase;
   }
 
   h4 {
@@ -53,11 +70,21 @@
 }
 
 .eventItem__actions {
-  padding: 0 18px 10px;
-  text-align: right;
+  padding: 7px 10px;
+  text-align: center;
+
+  @include respond(tab-land) {
+    padding: 0 18px 10px;
+    text-align: right;
+  }
 
   a {
     @extend .btn;
     margin-left: 10px;
+    font-size: 10px;
+
+    @include respond(tab-land) {
+      font-size: 12px;
+    }
   }
 }
