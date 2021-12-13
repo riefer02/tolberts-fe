@@ -1,20 +1,47 @@
 import React from 'react';
-import Layout from '../../components/Layout';
-// import styles from '../../assets/styles/pages/_events.module.scss';
-import { getSingleEvent } from '../../lib/fetchEvents';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+import Image from 'next/image';
+import Layout from '../../components/Layout';
+import styles from '../../assets/styles/pages/_events.module.scss';
+import { getSingleEvent } from '../../lib/fetchEvents';
+import { formatQueriedEventData } from '../../lib/events';
 
 export default function Event({ event }) {
   const router = useRouter();
-  const { name, location, primaryHeader, secondaryHeader, date, cta, image } =
-    event.postTypeEvent;
+  const { name, location, imageSrc, date, cta, placeholder, id, description } =
+    event;
 
   return (
     <Layout title={name}>
       <div className="container">
-        <h1>{name}</h1>
-        <button onClick={() => router.back()}>Click here to go back</button>
-        <div className="w-100 h-100 bg-indigo-500 flex justify-center align-middle"></div>
+        <div className={styles.eventItem}>
+          <div className={styles.eventItem__image}>
+            <Image
+              src={imageSrc}
+              alt={`promotional image for ${name} event`}
+              layout="fill"
+              objectFit="cover"
+              placeholder="blur"
+              blurDataURL={placeholder}
+              className="rounded-lg"
+            />
+          </div>
+          <div className="flex flex-col w-full">
+            <div className={styles.eventItem__description}>
+              <h4>{date}</h4>
+              <h3>{name}</h3>
+              <h5>{location}</h5>
+              <p>{description}</p>
+            </div>
+            <div className={styles.eventItem__actions}>
+              <a href={cta}>Get Tickets!</a>
+              <Link href={`/events/${id}`}>
+                <a>Learn More</a>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );
@@ -26,7 +53,7 @@ export async function getServerSideProps(ctx) {
 
   return {
     props: {
-      event,
+      event: await formatQueriedEventData(event),
     },
   };
 }
