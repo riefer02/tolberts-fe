@@ -14,7 +14,7 @@ export default function Layout({ children, title }) {
       </Head>
       <Navigation />
       <PageLayout>
-        <PageHeader title={title} />
+        {title && <PageHeader title={title} />}
         {children}
       </PageLayout>
     </div>

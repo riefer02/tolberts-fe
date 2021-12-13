@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
+import TopLeftAction from '../../components/TopLeftAction';
 import styles from '../../assets/styles/pages/_events.module.scss';
 import { getSingleEvent } from '../../lib/fetchEvents';
 import { formatQueriedEventData } from '../../lib/events';
@@ -13,8 +14,9 @@ export default function Event({ event }) {
     event;
 
   return (
-    <Layout title={name}>
-      <div className="container">
+    <Layout>
+      <TopLeftAction actionType="back" />
+      <div className={`${styles.eventDetails} container`}>
         <div className={styles.eventItem}>
           <div className={styles.eventItem__image}>
             <Image
