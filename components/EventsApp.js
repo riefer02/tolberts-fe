@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Layout from '../../components/Layout';
-import styles from '../../assets/styles/pages/_events.module.scss';
-import { getEvents } from '../../lib/fetchEvents';
-import { formatQueriedEventData } from '../../lib/events';
+import Layout from './Layout';
+import styles from '../assets/styles/pages/_events.module.scss';
+import { getEvents } from '../lib/fetchEvents';
+import { formatQueriedEventData } from '../lib/events';
 
 export default function Events({ events }) {
   return (
