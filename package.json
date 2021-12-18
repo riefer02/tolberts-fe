@@ -19,6 +19,7 @@
     "autoprefixer": "^10.4.0",
     "postcss": "8.4.5",
     "postcss-focus": "^5.0.1",
+    "postcss-preset-env": "^7.0.2",
     "postcss-resolve-url": "^0.0.1",
     "tailwindcss": "^3.0.7"
   },
