@@ -9,7 +9,6 @@ import { getSingleEvent } from '../../lib/fetchEvents';
 import { formatQueriedEventData } from '../../lib/events';
 
 export default function Event({ event }) {
-  const router = useRouter();
   const { name, location, imageSrc, date, cta, placeholder, id, description } =
     event;
 

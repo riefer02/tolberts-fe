@@ -7,8 +7,6 @@ import { getEvents } from '../../lib/fetchEvents';
 import { formatQueriedEventData } from '../../lib/events';
 
 export default function Events({ events }) {
-  console.log(events);
-
   return (
     <Layout title="Events">
       <div className="container">
@@ -56,7 +54,6 @@ export async function getServerSideProps(ctx) {
   for (const event of events) {
     formattedEvents.push(await formatQueriedEventData(event));
   }
-  console.log(formattedEvents);
 
   return {
     props: {
