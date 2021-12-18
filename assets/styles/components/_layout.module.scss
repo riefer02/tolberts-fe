@@ -13,7 +13,7 @@
   width: 100%;
   background-position: center;
   background-attachment: fixed;
-  padding: 16px 8px;
+  padding: 16px 0;
 
   @include respond(tab-port) {
     padding: 16px;

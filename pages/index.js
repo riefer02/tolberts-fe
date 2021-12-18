@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import EventApp from '../components/EventsApp';
 import { getEvents } from '../lib/fetchEvents';
-import { formatQueriedEventData } from '../lib/events';
+import { formatQueriedEventData, sortByDate } from '../lib/events';
 
 export default function Home({ events }) {
   return (
@@ -25,7 +25,7 @@ export async function getServerSideProps(ctx) {
 
   return {
     props: {
-      events: formattedEvents,
+      events: sortByDate(formattedEvents),
     },
   };
 }
