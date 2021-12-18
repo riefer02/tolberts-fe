@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Layout from './Layout';
 import styles from '../assets/styles/pages/_events.module.scss';
-import { getEvents } from '../lib/fetchEvents';
-import { formatQueriedEventData } from '../lib/events';
 
 export default function Events({ events }) {
   return (
@@ -45,19 +43,4 @@ export default function Events({ events }) {
       </div>
     </Layout>
   );
-}
-
-export async function getServerSideProps(ctx) {
-  let events = await getEvents();
-  const formattedEvents = [];
-
-  for (const event of events) {
-    formattedEvents.push(await formatQueriedEventData(event));
-  }
-
-  return {
-    props: {
-      events: formattedEvents,
-    },
-  };
 }
