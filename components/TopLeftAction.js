@@ -10,8 +10,8 @@ export default function TopLeftAction({ actionType }) {
       <div className={styles.topLeftAction__Content}>
         {actionType === 'back' && (
           <span
-            className={styles.topLeftAction__Back}
-            onClick={() => router.back()}
+            className={styles.topLeftAction__backArrow}
+            onClick={() => router.push('https://tolbertsrestaurant.com')}
           ></span>
         )}
       </div>

@@ -4,13 +4,14 @@
   padding: 10px 20px;
   border-radius: $border-radius-global;
   background-color: $color-white;
-  border: $border-width-global solid $color-black;
+  border: $border-width-global solid $color-gray;
   font-weight: bold;
   transition: $transition-fast;
   box-shadow: $box-shadow;
+  cursor: pointer;
 
   &:hover {
-    background-color: $color-gray-darker;
-    color: $color-white;
+    background-color: rgba($color-white, 0.1);
+    color: rgba($color-red, 01);
   }
 }

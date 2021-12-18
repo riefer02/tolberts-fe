@@ -1,16 +1,21 @@
 @import '../utilities/variables.module';
+@import '../utilities/mixins.module';
 
 .layout {
-  z-index: $z-index-layout;
-}
-
-.pageLayout {
-  position: relative;
-  height: 100%;
-  background: rgb(255, 237, 188);
+  background: $color-blue;
   background: radial-gradient(
     circle,
-    rgba(255, 237, 188, 1) 0%,
-    rgba(237, 66, 100, 1) 100%
+    rgba($color-red, 1) 0%,
+    rgba($color-blue, 1) 100%
   );
+  background-image: url('/images/demo-bg.jpeg');
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 16px 8px;
+
+  @include respond(tab-port) {
+    padding: 16px;
+  }
 }

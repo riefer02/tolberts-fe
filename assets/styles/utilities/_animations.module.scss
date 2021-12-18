@@ -1,0 +1,15 @@
+.fadeOut {
+  opacity: 0;
+  width: 0;
+  height: 1px;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+  z-index: 0;
+  visibility: hidden;
+}
+.fadeIn {
+  opacity: 1;
+  width: 100px;
+  height: min-content;
+  visibility: visible;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+}

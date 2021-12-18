@@ -2,5 +2,6 @@
 @use './variables.module';
 @use './mixins.module';
 @use './typography';
-@use './base';
+@use './base.module';
 @use './colors.module';
+@use './animations.module';

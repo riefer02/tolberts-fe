@@ -5,7 +5,7 @@
 .topLeftAction {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 3.25%;
   z-index: $z-index-primary-content;
 
   @include respond(desktop) {
@@ -20,43 +20,63 @@
 }
 
 .topLeftAction__Content {
+  @apply shadow-md;
   height: 25px;
   width: 25px;
   padding: 25px;
   border-radius: 50%;
-  background-color: palegreen;
-  cursor: pointer;
-  @apply shadow-md;
+  background-color: rgba($color-red, 0.85);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: $transition-fast;
+  border: $border-width-global solid $color-gray;
 
   @include respond(tab-port) {
+    height: 35px;
+    width: 35px;
+    padding: 40px;
+  }
+
+  @include respond(tab-land) {
     height: 40px;
     width: 40px;
     padding: 50px;
   }
 
-  @include respond(big-desktop) {
-    height: 60px;
-    width: 60px;
-    padding: 70px;
+  &:hover {
+    background-color: rgba($color-white, 0.25);
+
+    .topLeftAction__backArrow {
+      &::after {
+        border-color: rgba($color-red, 0.95);
+      }
+    }
   }
 }
 
-.topLeftAction__Back {
+.topLeftAction__backArrow {
   position: relative;
   top: 3px;
-  left: 3px;
+  left: 5px;
+  transition: $transition-fast;
 
-  &:after {
+  &::after {
     content: '';
     display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    border-top: 0.3em solid $color-black;
-    border-right: 0.3em solid $color-black;
+    width: 1.5em;
+    height: 1.5em;
+    border-top: 0.3em solid $color-gray;
+    border-right: 0.3em solid $color-gray;
     transform: rotate(-135deg);
+
+    @include respond(tab-port) {
+      width: 1.6em;
+      height: 1.6em;
+      border-top: 0.4em solid $color-gray;
+      border-right: 0.4em solid $color-gray;
+    }
   }
 }
