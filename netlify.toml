@@ -3,11 +3,9 @@
 [build]
 publish = ".next"
 
+[build.environment]
+WORDPRESS_API_URL = "http://tolbertscms.com/graphql"
+
 [[plugins]]
 package = "@netlify/plugin-nextjs"
 
-[context.production]
-  environment = { WORDPRESS_API_URL = "http://tolbertscms.com/graphql", }
-  
-  [functions]
-  node_bundler = "esbuild"
