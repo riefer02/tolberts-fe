@@ -10,7 +10,7 @@ export default function Home({ events }) {
         <title>Tolbert's Music</title>
         <link rel="icon" href="#" />
       </Head>
-      <EventApp events={events} />
+      {events.length > 0 && <EventApp events={events} />}
     </div>
   );
 }
