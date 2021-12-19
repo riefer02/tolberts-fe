@@ -3,7 +3,7 @@
 [build]
 publish = ".next"
 
-[build.environment]
+[context.production.environment]
 WORDPRESS_API_URL = "http://tolbertscms.com/graphql"
 
 [[plugins]]
