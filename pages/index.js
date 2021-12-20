@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import EventApp from '../components/EventsApp';
-import { getEvents } from '../lib/fetchEvents';
 import { formatQueriedEventData, sortByDate } from '../lib/events';
+const HOSTNAME_URL = process.env.HOSTNAME_URL;
 
 export default function Home({ events }) {
   return (
@@ -16,7 +16,10 @@ export default function Home({ events }) {
 }
 
 export async function getServerSideProps(ctx) {
-  let events = await getEvents();
+  const events = await fetch(`${HOSTNAME_URL}/api/fetchEvents`)
+    .then((res) => res.json())
+    .then((data) => data);
+
   const formattedEvents = [];
 
   for (const event of events) {
