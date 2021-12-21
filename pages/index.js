@@ -14,7 +14,7 @@ export default function Home({ events }) {
   );
 }
 
-export async function getServerSideProps(ctx) {
+export async function getStaticProps(ctx) {
   const HOSTNAME_URL = process.env.HOSTNAME_URL;
   const events = await fetch(`${HOSTNAME_URL}/api/fetchEvents`)
     .then((res) => res.json())
@@ -30,5 +30,6 @@ export async function getServerSideProps(ctx) {
     props: {
       events: sortByDate(formattedEvents),
     },
+    revalidate: 60000,
   };
 }
