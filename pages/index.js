@@ -30,6 +30,5 @@ export async function getStaticProps(ctx) {
     props: {
       events: sortByDate(formattedEvents),
     },
-    revalidate: 10, // In seconds
   };
 }
