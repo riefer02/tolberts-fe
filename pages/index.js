@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import EventApp from '../components/EventsApp';
 import { formatQueriedEventData, sortByDate } from '../lib/events';
-const HOSTNAME_URL = process.env.HOSTNAME_URL;
 
 export default function Home({ events }) {
   return (
@@ -16,6 +15,7 @@ export default function Home({ events }) {
 }
 
 export async function getStaticProps(ctx) {
+  const HOSTNAME_URL = process.env.HOSTNAME_URL;
   const events = await fetch(`${HOSTNAME_URL}/api/fetchEvents`)
     .then((res) => res.json())
     .then((data) => data);
