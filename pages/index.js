@@ -15,7 +15,7 @@ export default function Home({ events }) {
   );
 }
 
-export async function getServerSideProps(ctx) {
+export async function getStaticProps(ctx) {
   const events = await fetch(`${HOSTNAME_URL}/api/fetchEvents`)
     .then((res) => res.json())
     .then((data) => data);
