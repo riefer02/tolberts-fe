@@ -4,8 +4,8 @@
 publish = ".next"
 
 [context.production.environment]
-WORDPRESS_API_URL = "http://tolbertscms.com/graphql"
-HOSTNAME_URL = "https://tolbertsmusic.com"
+NEXT_PUBLIC_WORDPRESS_API_URL = "http://tolbertscms.com/graphql"
+NEXT_PUBLIC_HOSTNAME_URL = "https://tolbertsmusic.com"
 
 [[plugins]]
 package = "@netlify/plugin-nextjs"
