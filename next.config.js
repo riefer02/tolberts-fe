@@ -1,6 +1,7 @@
-const { withPlaiceholder } = require('@plaiceholder/next');
+// const { withPlaiceholder } = require('@plaiceholder/next');
 
-module.exports = withPlaiceholder({
+// module.exports = withPlaiceholder({
+module.exports = {
   images: {
     domains: ['tolbertscms.com', 'tolbertsmusic.com'],
   },
@@ -8,4 +9,4 @@ module.exports = withPlaiceholder({
     WORDPRESS_API_URL: process.env.WORDPRESS_API_URL,
     HOSTNAME_URL: process.env.HOSTNAME_URL,
   },
-});
+};

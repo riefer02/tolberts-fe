@@ -25,7 +25,7 @@ const EventItem = ({ event }) => {
   const [isOpen, setOpen] = useState(false);
   const {
     imageSrc,
-    placeholder,
+    // placeholder,
     date,
     primaryHeader,
     secondaryHeader,
@@ -41,7 +41,7 @@ const EventItem = ({ event }) => {
           layout="fill"
           objectFit="cover"
           placeholder="blur"
-          blurDataURL={placeholder}
+          // blurDataURL={placeholder}
           className="rounded-lg"
         />
       </div>
