@@ -2,8 +2,7 @@ import Head from 'next/head';
 import EventApp from '../components/EventsApp';
 import { formatQueriedEventData, sortByDate } from '../lib/events';
 
-export default function Home({ events, err }) {
-  if (err) return <h1>{err.message}</h1>;
+export default function Home({ events }) {
   return (
     <div>
       <Head>
@@ -16,28 +15,20 @@ export default function Home({ events, err }) {
 }
 
 export async function getStaticProps(ctx) {
-  try {
-    const HOSTNAME_URL = process.env.HOSTNAME_URL;
-    const events = await fetch(`${HOSTNAME_URL}/api/fetchEvents`)
-      .then((res) => res.json())
-      .then((data) => data);
+  const HOSTNAME_URL = process.env.HOSTNAME_URL;
+  const events = await fetch(`${HOSTNAME_URL}/api/fetchEvents`)
+    .then((res) => res.json())
+    .then((data) => data);
 
-    const formattedEvents = [];
+  const formattedEvents = [];
 
-    for (const event of events) {
-      formattedEvents.push(await formatQueriedEventData(event));
-    }
-
-    return {
-      props: {
-        events: sortByDate(formattedEvents),
-      },
-    };
-  } catch (err) {
-    return {
-      props: {
-        err,
-      },
-    };
+  for (const event of events) {
+    formattedEvents.push(await formatQueriedEventData(event));
   }
+
+  return {
+    props: {
+      events: sortByDate(formattedEvents),
+    },
+  };
 }
