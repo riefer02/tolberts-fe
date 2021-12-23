@@ -3,15 +3,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "postbuild": "next-on-netlify"
+    "start": "next start"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^4.1.1",
     "@plaiceholder/next": "^2.2.0",
     "cors": "^2.8.5",
     "next": "^12.0.7",
-    "next-on-netlify": "^3.0.1",
     "plaiceholder": "^2.2.0",
     "postcss": "^8.4.5",
     "react": "^17.0.2",
