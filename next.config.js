@@ -1,13 +1,13 @@
-const { withPlaiceholder } = require('@plaiceholder/next');
+// const { withPlaiceholder } = require('@plaiceholder/next');
 
-module.exports = withPlaiceholder({
+module.exports = {
   images: {
     domains: ['tolbertscms.com', 'tolbertsmusic.com'],
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback.fs = false;
-    }
-    return config;
-  },
-});
+  // webpack: (config, { isServer }) => {
+  //   if (!isServer) {
+  //     config.resolve.fallback.fs = false;
+  //   }
+  //   return config;
+  // },
+};
