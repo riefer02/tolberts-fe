@@ -1,7 +1,7 @@
 
-
 [build]
-publish = ".next"
+  command = "npm run build"
+  publish = ".next"
 
 [context.production.environment]
 WORDPRESS_API_URL = "http://tolbertscms.com/graphql"
