@@ -2,8 +2,7 @@ import Head from 'next/head';
 import EventApp from '../components/EventsApp';
 import { formatQueriedEventData, sortByDate } from '../lib/events';
 
-export default function Home({ events, message }) {
-  // if (message) return <p>{message}</p>;
+export default function Home({ events }) {
   return (
     <div>
       <Head>
@@ -29,7 +28,7 @@ export async function getStaticProps(ctx) {
 
   return {
     props: {
-      events: formattedEvents,
+      events: sortByDate(formattedEvents),
     },
   };
 }
