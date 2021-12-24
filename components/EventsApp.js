@@ -25,7 +25,7 @@ const EventItem = ({ event }) => {
   const [isOpen, setOpen] = useState(false);
   const {
     imageSrc,
-    placeholder,
+    // placeholder,
     date,
     primaryHeader,
     secondaryHeader,
