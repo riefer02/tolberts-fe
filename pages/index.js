@@ -14,7 +14,7 @@ export default function Home({ events }) {
   );
 }
 
-export async function getStaticProps(ctx) {
+export async function getServerSideProps(ctx) {
   const HOSTNAME_URL = process.env.HOSTNAME_URL;
   const formattedEvents = [];
 
