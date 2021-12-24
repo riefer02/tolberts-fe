@@ -3,7 +3,7 @@ import EventApp from '../components/EventsApp';
 import { formatQueriedEventData, sortByDate } from '../lib/events';
 
 export default function Home({ events, message }) {
-  if (message) return <p>{message}</p>;
+  // if (message) return <p>{message}</p>;
   return (
     <div>
       <Head>
@@ -29,7 +29,7 @@ export async function getStaticProps(ctx) {
 
   return {
     props: {
-      message: 'hello world',
+      events: formattedEvents,
     },
   };
 }
