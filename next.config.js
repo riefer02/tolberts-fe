@@ -1,6 +1,6 @@
-// const { withPlaiceholder } = require('@plaiceholder/next');
+const { withPlaiceholder } = require('@plaiceholder/next');
 
-module.exports = {
+module.exports = withPlaiceholder({
   images: {
     domains: ['tolbertscms.com', 'tolbertsmusic.com'],
   },
@@ -10,4 +10,4 @@ module.exports = {
   //   }
   //   return config;
   // },
-};
+});
