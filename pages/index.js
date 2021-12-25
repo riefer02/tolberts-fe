@@ -28,7 +28,7 @@ export async function getServerSideProps(ctx) {
       id: event.node.id,
       imageSrc: event.node.postTypeEvent.image.sourceUrl,
       // placeholder: css,
-      ...eventData.node.postTypeEvent,
+      ...event.node.postTypeEvent,
     });
     // formattedEvents.push(await formatQueriedEventData(event));
   }
