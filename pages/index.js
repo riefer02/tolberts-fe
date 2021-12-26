@@ -7,8 +7,19 @@ export default function Home({ events }) {
   return (
     <div>
       <Head>
-        <title>Tolbert's Music</title>
+        <title>Tolbert's Live Music Calendar</title>
         <link rel="icon" href="#" />
+        <meta
+          name="description"
+          content="Live Music Calendar for Tolbert's Chili Parlor Restaurant in Grapevine, Texas."
+          key="desc"
+        />
+        <meta property="og:title" content="Tolbert's Live Music Calendar" />
+        <meta
+          property="og:description"
+          content="Live Music Events Calendar for Tolbert's Restaurant and Chili Parlor in Grapevine, Texas"
+        />
+        <meta property="og:image" content="/images/seo-image.jpeg" />
       </Head>
       {events?.length > 0 && <EventApp events={events} />}
     </div>
