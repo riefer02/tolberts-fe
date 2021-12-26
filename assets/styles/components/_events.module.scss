@@ -83,6 +83,7 @@
 .eventItem__date {
   font-size: 20px;
   font-weight: bold;
+  -webkit-text-stroke: 1px rgb($color-white, 0.6);
 
   @include respond(desktop) {
     font-size: 20px;
@@ -128,6 +129,7 @@
   h3 {
     font-size: 24px;
     font-weight: bold;
+    -webkit-text-stroke: 1px rgb($color-white, 0.6);
 
     @include respond(desktop) {
       font-size: 26px;
