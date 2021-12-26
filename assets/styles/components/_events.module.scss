@@ -71,6 +71,45 @@
   }
 }
 
+.eventItem__dateTimes {
+  display: flex;
+  flex-direction: column;
+
+  @include respond(tab-land) {
+    flex-direction: row;
+  }
+}
+
+.eventItem__date {
+  font-size: 20px;
+  font-weight: bold;
+
+  @include respond(desktop) {
+    font-size: 20px;
+  }
+}
+
+.eventItem__times {
+  display: flex;
+  margin: 0 auto;
+
+  @include respond(tab-land) {
+    margin: unset;
+  }
+}
+
+.eventItem__startTime {
+  margin-left: 0;
+
+  @include respond(tab-land) {
+    margin-left: 10px;
+  }
+}
+
+.eventItem__endTime {
+  display: inline-block;
+}
+
 .eventItem__description {
   padding: 10px 0 0;
   text-align: center;
@@ -84,16 +123,6 @@
   h3,
   h5 {
     text-transform: uppercase;
-  }
-
-  h4 {
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: bold;
-
-    @include respond(desktop) {
-      font-size: 20px;
-    }
   }
 
   h3 {

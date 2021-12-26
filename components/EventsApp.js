@@ -31,6 +31,8 @@ const EventItem = ({ event }) => {
     primaryHeader,
     secondaryHeader,
     description,
+    startTime,
+    endTime,
   } = event;
 
   return (
@@ -48,12 +50,21 @@ const EventItem = ({ event }) => {
           />
         </div>
       )}
-
       <div className="flex flex-col w-full">
         <div className={styles.eventItem__description}>
-          <h4>{date}</h4>
+          <div className={styles.eventItem__dateTimes}>
+            <h4 className={styles.eventItem__date}>{date}</h4>
+            <div className={styles.eventItem__times}>
+              {startTime && (
+                <h5 className={styles.eventItem__startTime}>{startTime}</h5>
+              )}
+              {endTime && (
+                <h5 className={styles.eventItem__endTime}>- {endTime}</h5>
+              )}
+            </div>
+          </div>
           <h3>{primaryHeader}</h3>
-          <h5>{secondaryHeader}</h5>
+          {secondaryHeader && <h5>{secondaryHeader}</h5>}
           <p className={`${isOpen ? animation.fadeIn : animation.fadeOut}`}>
             {description}
           </p>
