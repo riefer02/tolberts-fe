@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
-import styles from '../../assets/styles/pages/_events.module.scss';
+import styles from '../../assets/styles/components/_events.module.scss';
 import { getSingleEvent } from '../../lib/fetchEvents';
 import { formatQueriedEventData } from '../../lib/events';
 
