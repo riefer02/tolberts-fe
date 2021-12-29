@@ -97,6 +97,31 @@
   @include respond(tab-land) {
     margin: unset;
   }
+
+  span {
+    margin-left: 15px;
+    height: 0;
+    display: none;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 20px;
+      width: 2px;
+      display: inline-block;
+      position: relative;
+      background-color: rgba($color-black, 0.8);
+      bottom: 8px;
+    }
+
+    &::before {
+      right: 5px;
+    }
+
+    @include respond(tab-land) {
+      display: block;
+    }
+  }
 }
 
 .eventItem__startTime {
@@ -132,7 +157,7 @@
     -webkit-text-stroke: 1px rgb($color-white, 0.6);
 
     @include respond(desktop) {
-      font-size: 26px;
+      font-size: 30px;
     }
   }
 

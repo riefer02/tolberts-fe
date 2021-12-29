@@ -55,6 +55,7 @@ const EventItem = ({ event }) => {
           <div className={styles.eventItem__dateTimes}>
             <h4 className={styles.eventItem__date}>{date}</h4>
             <div className={styles.eventItem__times}>
+              <span></span>
               {startTime && (
                 <h5 className={styles.eventItem__startTime}>{startTime}</h5>
               )}
