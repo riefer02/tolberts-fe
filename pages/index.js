@@ -5,7 +5,7 @@ import { getEvents } from '../lib/fetchEvents';
 
 export default function Home({ events }) {
   return (
-    <div>
+    <div className="page">
       <Head>
         <title>Tolbert's Live Music Calendar</title>
         <link rel="icon" href="#" />
