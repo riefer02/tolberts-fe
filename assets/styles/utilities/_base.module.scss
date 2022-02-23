@@ -9,11 +9,6 @@ body {
 body {
   font-family: $font-family-primary;
   background: $color-black;
-  background: radial-gradient(
-    circle,
-    rgba($color-red, 1) 0%,
-    rgba($color-black, 1) 100%
-  );
 }
 
 main {
