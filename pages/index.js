@@ -22,7 +22,7 @@ export default function Home({ events }) {
         <meta property="og:image" content="/images/seo-image.jpeg" />
       </Head>
       {/* {events?.length > 0 && <EventApp events={events} />} */}
-      <div className="grid place-items-center h-screen text-white text-lg max-w-md mx-auto">
+      <div className="grid place-items-center h-screen text-white text-lg max-w-md mx-auto p-8">
         We are experiencing technical difficulties with Amazon Web Services.
         Please be patient while Jeff Bezos works closely with our staff to solve
         this issue.
