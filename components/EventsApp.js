@@ -43,10 +43,10 @@ const EventItem = ({ event }) => {
             src={imageSrc}
             alt={''}
             layout="fill"
-            objectFit="cover"
+            objectFit="contain"
             placeholder="blur"
             blurDataURL={placeholder}
-            className="rounded-lg"
+            className={`rounded-lg ${styles.event__image}`}
           />
         </div>
       )}

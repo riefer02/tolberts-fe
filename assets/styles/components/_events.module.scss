@@ -5,7 +5,7 @@
 
 .pageHeader {
   font-weight: bold;
-  text-shadow: 0 0 2px $color-black;
+  text-shadow: 1px 1px 2px $color-black;
   text-decoration: underline;
   text-transform: uppercase;
   font-size: 32px;
@@ -41,7 +41,7 @@
   position: relative;
   box-shadow: $box-shadow;
   backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba($color-gray, 0.65);
+  background-color: rgba($color-white, 0.9);
   border-radius: 12px;
   border: 2px solid rgba($color-gray, 0.6);
   max-width: 400px;
@@ -69,6 +69,10 @@
     height: 160px;
     width: 160px;
   }
+}
+
+.event__image {
+  background-color: $color-black-alt;
 }
 
 .eventItem__dateTimes {
