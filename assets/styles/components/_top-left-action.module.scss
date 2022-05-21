@@ -21,9 +21,9 @@
 
 .topLeftAction__Content {
   @apply shadow-md;
-  height: 25px;
-  width: 25px;
-  padding: 25px;
+  height: 20px;
+  width: 20px;
+  padding: 24px;
   border-radius: 50%;
   background-color: rgba($color-red, 0.85);
   position: relative;
@@ -37,7 +37,6 @@
   @include respond(tab-port) {
     height: 35px;
     width: 35px;
-    padding: 40px;
   }
 
   &:hover {
@@ -53,24 +52,24 @@
 
 .topLeftAction__backArrow {
   position: relative;
-  top: 3px;
-  left: 5px;
+  top: 2px;
+  left: 4px;
   transition: $transition-fast;
 
   &::after {
     content: '';
     display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    border-top: 0.3em solid $color-gray;
-    border-right: 0.3em solid $color-gray;
+    width: 1.0em;
+    height: 1.0em;
+    border-top: 0.2em solid $color-gray;
+    border-right: 0.2em solid $color-gray;
     transform: rotate(-135deg);
 
     @include respond(tab-port) {
-      width: 1.6em;
-      height: 1.6em;
-      border-top: 0.4em solid $color-gray;
-      border-right: 0.4em solid $color-gray;
+      width: 1.2em;
+      height: 1.2em;
+      border-top: 0.3em solid $color-gray;
+      border-right: 0.3em solid $color-gray;
     }
   }
 }

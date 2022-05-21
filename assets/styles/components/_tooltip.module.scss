@@ -1,0 +1,16 @@
+@import '../utilities/variables.module';
+@import '../utilities/mixins.module';
+
+.tooltip {
+  position: relative;
+  top: 5px;
+  background-color: $color-cream;
+  display: inline-block;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+  font-family: $font-family-primary;
+}
+
+.isVisible {
+  opacity: 1;
+}
