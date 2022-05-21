@@ -5,3 +5,7 @@
 @use './base.module';
 @use './colors.module';
 @use './animations.module';
+
+.no-scroll {
+  overflow: hidden;
+}

@@ -1,0 +1,57 @@
+@import '../utilities/variables.module';
+@import '../utilities/mixins.module';
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color-cream, 0.8);
+  z-index: 2;
+}
+
+.modalContent {
+  @apply shadow-md;
+  max-width: clamp(300px, 100%, 600px);
+  background-color: $color-white;
+  padding: 20px 20px;
+}
+
+.modalMessage {
+  text-align: center;
+  font-size: 1.6rem;
+
+  @include respond(tab-port) {
+    font-size: 2.2rem;
+  }
+
+  @include respond(tab-land) {
+    font-size: 2.5rem;
+  }
+}
+
+.modalButtonGroup {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    @apply shadow-md;
+    background: $color-red;
+    color: $color-white;
+    margin: 5px;
+    padding: 12px 15px;
+    border-radius: 17px;
+    font-size: 1.3rem;
+
+    @include respond(tab-port) {
+      font-size: 1.5rem;
+    }
+  }
+}
