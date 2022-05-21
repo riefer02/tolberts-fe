@@ -1,15 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import TopLeftAction from '../components/TopLeftAction';
 import Layout from './Layout';
+import Modal from './Modal.js';
 import styles from '../assets/styles/components/_events.module.scss';
 import animation from '../assets/styles/utilities/_animations.module.scss';
 
+const returnMessageContent = {
+  message: `Do you want to return to tolbertsrestaurant.com?`,
+  actionType: 'return',
+};
+
 export default function Events({ events }) {
+  const [activeModal, setActiveModal] = useState(true);
+
+  useEffect(() => {
+    activeModal
+      ? document.body.classList.add('no-scroll')
+      : document.body.classList.remove('no-scroll');
+  }, [activeModal]);
+
   return (
     <Layout>
       <h1 className={styles.pageHeader}>Tolbert's Live Music</h1>
-      <TopLeftAction actionType="back" />
+      {activeModal && (
+        <Modal content={returnMessageContent} setActiveModal={setActiveModal} />
+      )}
+      <TopLeftAction actionType="return" setActiveModal={setActiveModal} />
       <div className="container">
         <ul className={styles.eventList}>
           {events.map((i, index) => (
