@@ -12,15 +12,15 @@ export default function TopLeftAction({ actionType, setActiveModal }) {
       <div
         className={styles.topLeftAction__Content}
         ref={hoverRef}
-        onClick={() => setActiveModal(true)}
+        onClick={() => setActiveModal((mode) => !mode)}
       >
         {actionType === 'return' && (
           <span className={styles.topLeftAction__backArrow}></span>
         )}
       </div>
-      <ToolTip isVisible={isHovered}>
+      {/* <ToolTip isVisible={isHovered}>
         Return to Tolbert's Restaurant Site
-      </ToolTip>
+      </ToolTip> */}
     </div>
   );
 }

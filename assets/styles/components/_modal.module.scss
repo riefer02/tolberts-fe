@@ -49,9 +49,17 @@
     padding: 12px 15px;
     border-radius: 17px;
     font-size: 1.3rem;
+    transition: all 0.2s;
+    border: 1px solid transparent;
 
     @include respond(tab-port) {
       font-size: 1.5rem;
+    }
+
+    &:hover {
+      background: $color-white;
+      color: $color-red;
+      border-color: $color-red;
     }
   }
 }
