@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from '../assets/styles/components/_modal.module.scss';
 import { useRouter } from 'next/router';
 

@@ -203,6 +203,11 @@
     @include respond(desktop) {
       font-size: 18px;
     }
+
+    &:hover {
+      background-color: rgba($color-red, 0.85);
+      color: $color-white;
+    }
   }
 }
 

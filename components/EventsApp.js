@@ -12,6 +12,7 @@ const returnMessageContent = {
 };
 
 export default function Events({ events }) {
+  // Modal Logic waits here until Redux State Management upgrade
   const [activeModal, setActiveModal] = useState(false);
 
   useEffect(() => {
