@@ -95,7 +95,7 @@ const EventItem = ({ event }) => {
                 setOpen(!isOpen);
               }}
             >
-              More Info
+              {!isOpen ? 'More Info' : 'Close Info'}
             </span>
           )}
         </div>
