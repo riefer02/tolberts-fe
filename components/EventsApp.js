@@ -12,7 +12,7 @@ const returnMessageContent = {
 };
 
 export default function Events({ events }) {
-  const [activeModal, setActiveModal] = useState(true);
+  const [activeModal, setActiveModal] = useState(false);
 
   useEffect(() => {
     activeModal
