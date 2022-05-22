@@ -11,7 +11,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgba($color-cream, 0.8);
-  z-index: 2;
+  z-index: $z-index-modal;
 }
 
 .modalContent {
