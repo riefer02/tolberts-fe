@@ -3,6 +3,7 @@ import Image from 'next/image';
 import TopLeftAction from '../components/TopLeftAction';
 import Layout from './Layout';
 import Modal from './Modal.js';
+import FadeIn from './FadeIn.js';
 import styles from '../assets/styles/components/_events.module.scss';
 import animation from '../assets/styles/utilities/_animations.module.scss';
 
@@ -24,9 +25,14 @@ export default function Events({ events }) {
   return (
     <Layout>
       <h1 className={styles.pageHeader}>Tolbert's Live Music</h1>
-      {activeModal && (
-        <Modal content={returnMessageContent} setActiveModal={setActiveModal} />
-      )}
+      <FadeIn isVisible={activeModal}>
+        {activeModal && (
+          <Modal
+            content={returnMessageContent}
+            setActiveModal={setActiveModal}
+          />
+        )}
+      </FadeIn>
       <TopLeftAction actionType="return" setActiveModal={setActiveModal} />
       <div className="container">
         <ul className={styles.eventList}>
