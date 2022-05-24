@@ -32,10 +32,10 @@ export default function Home({ events }) {
 }
 
 export async function getServerSideProps({ query, res }) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=43200, stale-while-revalidate=60'
-  );
+  // res.setHeader(
+  //   'Cache-Control',
+  //   'public, s-maxage=43200, stale-while-revalidate=60'
+  // );
 
   const formattedEvents = [];
   const events = await getEvents();
