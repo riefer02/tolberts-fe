@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import TopLeftAction from '../components/TopLeftAction';
-import Layout from './Layout';
-import Modal from './Modal.js';
-import FadeIn from './FadeIn.js';
+import dynamic from 'next/dynamic';
+// import TopLeftAction from '../components/TopLeftAction';
+// import Layout from './Layout';
+// import Modal from './Modal.js';
+// import FadeIn from './FadeIn.js';
 import styles from '../assets/styles/components/_events.module.scss';
 import animation from '../assets/styles/utilities/_animations.module.scss';
+
+const Layout = dynamic(import('../components/Layout'));
+const TopLeftAction = dynamic(import('../components/TopLeftAction'));
+const Modal = dynamic(import('../components/Modal'));
+const FadeIn = dynamic(import('../components/FadeIn'));
 
 const returnMessageContent = {
   message: `Do you want to return to tolbertsrestaurant.com?`,

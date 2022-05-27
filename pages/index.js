@@ -1,7 +1,10 @@
 import Head from 'next/head';
-import EventApp from '../components/EventsApp';
+// import EventApp from '../components/EventsApp';
 import { formatQueriedEventData, sortByDate } from '../lib/events';
 import { getEvents } from '../lib/fetchEvents';
+import dynamic from 'next/dynamic';
+
+const EventApp = dynamic(import('../components/EventsApp'));
 
 export default function Home({ events }) {
   return (
