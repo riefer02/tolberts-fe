@@ -4,7 +4,7 @@ import { formatQueriedEventData, sortByDate } from "../lib/events";
 import { getEvents } from "../lib/fetchEvents";
 import dynamic from "next/dynamic";
 
-// const EventApp = dynamic(import("../components/EventsApp"));
+const EventApp = dynamic(import("../components/EventsApp"));
 
 export default function Home({ events }) {
   return (
@@ -49,12 +49,12 @@ export default function Home({ events }) {
           content="https://tolbertsmusic.com/images/seo-image.jpeg"
         />
       </Head>
-      {/* {events?.length > 0 && <EventApp events={events} />} */}
-      <div className="grid place-items-center h-screen text-gray-900 text-lg max-w-md mx-auto p-8">
+      {events?.length > 0 && <EventApp events={events} />}
+      {/* <div className="grid place-items-center h-screen text-gray-900 text-lg max-w-md mx-auto p-8">
         We are experiencing technical difficulties with Amazon Web Services.
         Please be patient while Jeff Bezos works closely with our staff to solve
         this issue.
-      </div>
+      </div> */}
     </div>
   );
 }
