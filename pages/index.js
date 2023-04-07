@@ -12,6 +12,24 @@ export default function Home({ events }) {
       <Head>
         <title>Tolbert's Live Music Calendar</title>
         <link rel="icon" href="#" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest"></link>
         <meta
           name="description"
           content="Live Music Calendar for Tolbert's Chili Parlor Restaurant in Grapevine, Texas."
@@ -35,7 +53,6 @@ export default function Home({ events }) {
           property="og:image"
           content="https://tolbertsmusic.com/images/seo-image.jpeg"
         />
-
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="tolbertsmusic.com" />
         <meta property="twitter:url" content="https://tolbertsmusic.com" />

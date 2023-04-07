@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-// import TopLeftAction from '../components/TopLeftAction';
-// import Layout from './Layout';
-// import Modal from './Modal.js';
-// import FadeIn from './FadeIn.js';
 import styles from '../assets/styles/components/_events.module.scss';
 import animation from '../assets/styles/utilities/_animations.module.scss';
 
@@ -19,7 +15,6 @@ const returnMessageContent = {
 };
 
 export default function Events({ events }) {
-  // Modal Logic waits here until Redux State Management upgrade
   const [activeModal, setActiveModal] = useState(false);
 
   useEffect(() => {
