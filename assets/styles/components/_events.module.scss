@@ -11,7 +11,7 @@
   font-size: 32px;
   text-align: right;
   padding: 0 20px 10px 55px;
-  color: $color-white;
+  color: $color-red;
 
   @include respond(tab-port) {
     font-size: 46px;
@@ -24,7 +24,7 @@
   }
 
   @include respond(desktop) {
-    font-size: 50px;
+    font-size: 64px;
   }
 }
 
@@ -43,7 +43,7 @@
   backdrop-filter: blur(16px) saturate(180%);
   background-color: rgba($color-white, 0.9);
   border-radius: 12px;
-  border: 2px solid rgba($color-gray, 0.6);
+  border: 2px solid rgba($color-red, 0.5);
   max-width: 400px;
   margin: 0 auto;
   margin-bottom: 1rem;
@@ -64,10 +64,16 @@
   overflow: hidden;
   height: 220px;
   width: 100%;
+  min-width: 180px;
 
   @include respond(tab-land) {
-    height: 160px;
-    width: 160px;
+    // height: 160px;
+    // width: 160px;
+  }
+
+  @include respond(desktop) {
+    height: 180px;
+    width: 180px;
   }
 }
 
@@ -180,21 +186,21 @@
 }
 
 .eventItem__actions {
-  padding: 7px 10px;
+  // padding: 7px 10px;
   text-align: center;
 
   @include respond(tab-land) {
-    padding: 0 18px 10px;
+    // padding: 0 18px 10px;
     text-align: right;
   }
 
-  span {
+  div {
     @extend .btn;
-    margin-left: 10px;
     font-size: 14px;
     background-color: rgba($color-red, 0.85);
     color: $color-white;
     cursor: pointer;
+    display: inline;
 
     @include respond(tab-land) {
       font-size: 12px;
@@ -205,8 +211,8 @@
     }
 
     &:hover {
-      background-color: rgba($color-red, 0.85);
-      color: $color-white;
+      background-color: rgba($color-white, 0.85);
+      color: $color-red;
     }
   }
 }

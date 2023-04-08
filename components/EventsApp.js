@@ -75,7 +75,7 @@ const EventItem = ({ event }) => {
           />
         </div>
       )}
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full relative">
         <div className={styles.eventItem__description}>
           <div className={styles.eventItem__dateTimes}>
             <h4 className={styles.eventItem__date}>{date}</h4>
@@ -94,18 +94,29 @@ const EventItem = ({ event }) => {
           <p className={`${isOpen ? animation.fadeIn : animation.fadeOut}`}>
             {description}
           </p>
-        </div>
-        <div className={styles.eventItem__actions}>
+          <div className={styles.eventItem__actions}>
           {description?.length > 0 && (
-            <span
+            <div
               onClick={() => {
                 setOpen(!isOpen);
               }}
             >
               {!isOpen ? 'More Info' : 'Close Info'}
-            </span>
+            </div>
           )}
         </div>
+        </div>
+        {/* <div className={styles.eventItem__actions}>
+          {description?.length > 0 && (
+            <div
+              onClick={() => {
+                setOpen(!isOpen);
+              }}
+            >
+              {!isOpen ? 'More Info' : 'Close Info'}
+            </div>
+          )}
+        </div> */}
       </div>
     </li>
   );

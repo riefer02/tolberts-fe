@@ -4,7 +4,7 @@ import { formatQueriedEventData, sortByDate } from "../lib/events";
 import { getEvents } from "../lib/fetchEvents";
 import dynamic from "next/dynamic";
 
-const EventApp = dynamic(import("../components/EventsApp"));
+const EventApp = dynamic(import("../components/EventsApp"), { ssr: false });
 
 export default function Home({ events }) {
   return (
