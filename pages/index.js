@@ -77,16 +77,15 @@ export default function Home({ events }) {
 }
 
 export async function getServerSideProps({ query, res }) {
-  // res.setHeader(
-  //   'Cache-Control',
-  //   'public, s-maxage=43200, stale-while-revalidate=60'
-  // );
-
   const formattedEvents = [];
   const events = await getEvents();
 
   for (const event of events) {
-    formattedEvents.push(await formatQueriedEventData(event));
+    const formattedEvent = await formatQueriedEventData(event);
+    if (formattedEvent) {
+      // Only add the event if it's not null
+      formattedEvents.push(formattedEvent);
+    }
   }
 
   return {
